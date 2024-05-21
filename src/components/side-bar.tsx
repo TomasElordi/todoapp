@@ -1,42 +1,18 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Logo from "@/components/ui/logo";
 import Link from "next/link";
-import {
-  Badge,
-  BellIcon,
-  HomeIcon,
-  LineChartIcon,
-  Package2Icon,
-  PackageIcon,
-  ShoppingCartIcon,
-  SquareCheckBig,
-  SquareDashedKanban,
-  UsersIcon,
-} from "lucide-react";
-import { Button } from "./ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { BellIcon, SquareDashedKanban } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Sidebar() {
   const pages = [
     {
-      title: "Tasks",
-      href: "/tasks",
-      icon: SquareCheckBig,
-    },
-    {
       title: "Proyects",
-      href: "#",
+      href: "/proyects",
       icon: SquareDashedKanban,
     },
   ];
   return (
-    <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
+    <div className="hidden border-r  lg:block  h-full min-h-screen">
       <div className="flex h-full max-h-screen flex-col gap-2">
         <div className="flex h-[60px] items-center border-b px-6">
           <Link className="flex items-center gap-2 font-semibold" href="#">
@@ -61,14 +37,7 @@ export default function Sidebar() {
             ))}
           </nav>
         </div>
-        <div className="mt-auto p-4">
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
+        <div className="mt-auto p-4"></div>
       </div>
     </div>
   );
